@@ -1,15 +1,25 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-    <h1>Todo List</h1>
+    <style>
+    h1 {
+        text-align: center;
+        color: white;
+    }
+    h2{
+        color: white;
+    }
+    </style>
+    <h1>Otaku BNK48</h1>
 
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
     <form action="{% url 'todo:create' %}" method="post">
         {% csrf_token %}
         <!-- Todo Name -->
         <div class="form-group">
-            <label for="todo" class="col-sm-3 control-label">Todo</label>
-            <div class="col-sm-6">
+            <label for="todo" class="col-sm-3 control-label">Your Name<label>
+            <label for="todo" class="col-sm-3 control-label">Ex: (your name) / (name kami-oshi)<label>
+            <div class="col-sm-5">
                 {{ form.body }}
             </div>
         </div>
@@ -27,7 +37,7 @@
     
 
     <!-- Current Todos -->
-    <h2>Current Todos</h2>
+    <h2>รายชื่อ </h2>
     <table class="table table-striped todo-table">
         <thead>
             <th>Todos</th><th>&nbsp;</th>
@@ -50,5 +60,7 @@
             {% endfor %}
         </tbody>
     </table>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mfqJyKm20Z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 {% endblock %}
